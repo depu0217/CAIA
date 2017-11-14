@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww14280\viewh8500\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf0 Chapter 5\
+5.1 Demonstrate knowledge of measures of financial risk\
+\uc0\u61623  Define and calculate semi-variance and semi-standard deviation\
+semi-variance only considers the negative deviations and includes only the observations with values below the mean. it provides a sense of how much variability exists among losses, or among lower-than-expected outcomes. It is expressed as\
+Semi-variance = 
+\fs24 1/T\\sum_t [R_t - \\doubleE[R]]^2    for all R_t < \\doubleE[R]\
+semi-deviation is the square root of semi-variance. 
+\fs22 \
+\
+\uc0\u61623  Describe shortfall risk, target semi-variance, and target semi-standard deviation\
+Shortfall risk is simply the probability that the return will be less than the investor\'92s target rate of return\
+Target semi-variance substitutes the investor\'92s target rate o return in place of the mean return\
+Target semi-standard deviation (TSSD) is simply the square root of the target semi-variance\
+\
+\uc0\u61623  Define and calculate tracking error\
+Tracking error indicates the dispersion of returns of an investment relative to a benchmark return, where a benchmark return is the contemporaneous realized return on an index or peer group of comparable risk. \
+Tracking Error = \\sqrt(1/\{T-1\} \\sum_\{t=1\}^T (R_t - R_\{Bench,t\}-\\bar\{R\})^2)\
+where \\bar\{R\} is the mean of R_t - R_\{Bench,t\}, which is often assumed to be zero\
+\
+\uc0\u61623  Describe and calculate drawdown\
+Drawdown is defined as the maximum loss in the value of an asset over a specified time interval and is usually expressed in percentage-return form rather than currency (i.e. absolute amount). For example, for an asset $100, and falling to $60 would be said to have suffered a drawdown of 40%. \
+Maximum drawdown is defined the largest decline over any time interval within the entire observation period.  \
+\
+\uc0\u61623  Define and interpret value at risk (VaR), and discuss its strengths and weaknesses as a risk measure\
+Value at risk (VaR) is the loss figure associated with a particular percentile of a cumulative loss function. In other words, VaR the maximum loss over a specified time period within a specified probability. It involves two parts\
+1. the length of time involved in measuring the potential loss\
+2. the probability used to specify the confidence that the given loss figure will not be exceeded\
+Good: the VaR summarizes potential loss in a condensed and easy-to-understand way to facilitate understanding and comparison. \
+Bad: as a single measure of potential loss, the information that it can contain is limited unless the user knows the shape of the distribution of the potential losses. \
+\
+\uc0\u61623  Define and interpret conditional value-at-risk (CVaR)\
+Conditional value-at-risk (CVaR), aka expected tail loss, is the expected loss of the investor given that the VaR has been equaled or exceeded. the CVaR provides the investor with information about the potential magnitude of losses beyond the VaR.\
+\
+\
+5.2 Demonstrate knowledge of methods for estimating value at risk (VaR)\
+\uc0\u61623  Apply a parametric approach to estimate VaR with normally distributed returns or with normally distributed underlying factors\
+If the potential losses being analyzed follow a normal distribution, a parametric approach can be used. Parametric VaR: a VaR computation assuming normality and using the statistics of the normal distribution.\
+Parametric VaR = N\\times\\sigma\\times\\sqrt\{Days\}\\times Value\
+where N is the number of standard deviation, which depends on the confidence level specified; \\sigma is the estimated daily standard deviation;\
+99% confidence interval is 2.33\
+When volatility is modeled as a function of multiple underlying economic variables or factors, such as option price is modeled by a function of 5 variables. In this case, VaR is expressed using the volatilities and correlations of the underlying factors, as well as the sensitivity of the security prices to those factors.\
+\
+\uc0\u61623  Describe methods for estimating volatility as an input for VaR calculations\
+\pard\pardeftab720\partightenfactor0
+\cf0 Two primary approaches for estimating the volatility for VaR\
+1. as historical standard deviation of returns, including ARCH, GARCH\
+2. based on market prices of options. these estimates, if available, are typically more accurate than estimates based on past data, since they reflect expectations of the future.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\uc0\u61623  Describe methods for estimating VaR for leptokurtic positions\
+1. Use a probability distribution that allows for fatter tails, such as t-distribution, which has a parameter that can be adjusted to alter the tail fatness\
+2. To simply increase the number of standard deviations in the formula. The increase should be based on (historical) analysis of the extent of kurtosis\
+
+\f1  
+\f0 \
+\uc0\u61623  Describe methods for estimating VaR directly from historical data\
+To view a large collection of previous price changes and compute the size of price change for which the specified percentage of outcomes was lower. For example, to get ETF price change for past 5000 days to form 1,000 periods of five day each. We rank the five-day deviations from the highest to the lowest, and then find the corresponding percentile\
+Good: conceptually simple and it works even when the underlying probability distribution is unknown. The approach requires the process to be stable, meaning the risk of assets hasn\'92t changed and that the number of past observations is sufficiently large to make an accurate estimate.\
+Bad: unchanging asset risk throughout the previous observation periods usually disqualifies this approach for derivatives and sometimes for alternative investments; The requirement of sufficient past observations is a challenge for illiquid alternative investments, such as private real estate and private equity.\
+\
+\uc0\u61623  Describe how the Monte Carlo analysis can be used to estimate VaR\
+It is used in difficult problems when it is not practical to find expected values and standard deviations using mathematical solutions\
+\
+\uc0\u61623  Discuss and apply the aggregation of portfolio-component VaRs to determine the VaR for a portfolio under various assumptions (i.e., perfect correlation, zero correlation, and perfect negative correlation)\
+1. Perfect positive correlation: VaR of the combination is simply the sum of individual VaRs\
+2. Zero Correlation: VaR(P) = \\sqrt\{2\} VaR(P_i)\
+3. Perfect negative correlation: VaR(P) = 0\
+When positions are imperfectly correlated with each other, the VaRs should be combined using a model that incorporates the effects of diversification using statistics and correlation between the risks.\
+\
+\
+5.3 Demonstrate knowledge of ratio-based performance measures used in alternative investment analysis.\
+\uc0\u61623  Define the ratio-based performance measure type\
+the numerator of the ratio-based performance measures is based on the expected return or the average historical return of the given asset. It usually takes one of the three forms: \
+1. the asset\'92s average return\
+2. the asset\'92s average return - a benchmark or target rate of return\
+3. the asset\'92s average return - riskless rate\
+The denominator can be virtually any risk measure, such as volatility, beta\
+\
+\uc0\u61623  Define and calculate the Sharpe ratio\
+Sharp ratio compares the excess return per unit of total risk\
+SR = [\\doubleE[R_p] - R_f]/\\sigma_p\
+\pard\pardeftab720\partightenfactor0
+\cf0 Note: Quarterly SR = 10%-3%/\{20%\\\\sqrt\{0.25\}\}\
+\pard\pardeftab720\partightenfactor0
+\cf0 Bad: SR ignore the diversification effects and are primarily used in comparing returns only on a stand-alone basis.\
+SR is only as useful as volatility is useful in measuring risk. Thus, SR is less valuable measure of risk-adjusted performance for asset returns with non-normal distribution, as skewness and kurtosis are needed in addition to volatility.\
+Good:\
+1. Intuitive: SR reflects the added annual excess return per percentage point of annualized standard deviation\
+2. Measure of performance based on stand-alone risk, not systematic risk. Therefore, it does not reflect the marginal risk of including an asset in a portfolio when there is diversifiable risk\
+3. Sensitive to dimension. SR changes substantially if the unit of time changes, such as when quarterly rates are used rather than annualized rates.\
+4. Less usefully in comparing investment with returns that vary by skew and kurtosis\
+\
+\uc0\u61623  Define and calculate the Treynor ratio\
+TR has excess return as its numerator and beta as the measure of risk as its denominator\
+TR = [\\doubleE[R_p] - R_f] / \\beta_p\
+1. Intuitive. TR reflects the added annual excess return per unit of beta\
+2. Measure of performance based on systematic risk, not stand-alone risk. It does not reflect the marginal totoal risk of including an asset in a portfolio that is poorly diversified\
+3. Directly proportional to its dimension. TR (annual rates) = 4* TR(quarterly rates)\
+4. Less useful in comparing investments with returns that vary by skew and kurtosis, because beta does not capture higher moments\
+\
+\uc0\u61623  Recognize and calculate the Sortino ratio, the information ratio, and return on VaR\
+The Sortino ratio subtracts a benchmark return, rather than the riskless rate from asset\'92s return and uses downside standard deviation as the measure of risk\
+Sortino Risk = [\\doubleE[R_p] - R_Target]/TSSD\
+Even target return = riskless rate, Sortino ratio is not equal to Sharp ratio due to different risk measures.\
+The information ratio uses difference between portfolio return and benchmark return in numerator, and tracking error as  the risk measure. \
+Information Ratio = [\\doubleE[R_p] - R_benchmark]/TE\
+Return on VaR is the expected return of an asset divided by a specified VaR\
+RoVaR = E[R_p]/VaR\
+RoVaR may be useful when VaR is a good summary measure of the risks being faced.\
+\
+\
+5.4 Demonstrate knowledge of risk-adjusted performance measures used in alternative investment analysis.\
+\uc0\u61623  Define the risk-adjusted performance measure type\
+In practice, a variety of performance measure should be viewed in a performance review, each of which is selected to view performance form a relevant perspective\
+\
+\uc0\u61623  Recognize and calculate Jensen\'92s alpha, M
+\fs14 2 
+\fs22 (M-squared), and average tracking error\
+Jensen\'92s alpha is the difference between its expected return and the expected return of efficiently priced asset of similar risk. \
+\\alpha_p = \\doubleE[R_p] - R_f - \\beta_p[\\doubleE[R_m] - R_f]\
+any return above the riskless rate and the required risk premium is alpha, which represents superior performance\
+Note: no assets offers a non-zero alpha in CAPM world, as all assets are priced efficiently in CAPM context. In practice, expected return on asset and market are not observable, so Jensen\'92s alpha is estimated using historical data instead\
+
+\fs24 R_t - R_f = a+ b(R_mt - R_f) + e_t\
+where \
+a is the estimated intercept, subject to levels of confidence\
+b is the estimated slope coefficients, the portfolio\'92s beta\
+e_t is the error term, the idiosyncratic return of the portfolio in time t\
+\
+M-squared approach expresses the excess return of an investment after its risk has been normalized to equal the risk of the market portfolio. \
+M^2 = R_f + \\sigma_m/\\sigma_p\\times[\\doubleE[R_p] - R_f]\
+step 1: to leverage or deleverage each of the funds into a total portfolio that has the same volatility as the market portfolio. for example, for a fund with volatility 5%, with a total market volatility 10%, the manager would use 2:1 leverage, effectively allocating a weight of 200% to the fund and -100% to the riskless asset. \
+\
+Average tracking error is the excess of an investment\'92s return relative to its benchmark. It is the numerator of information ratio.\
+
+\fs22 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

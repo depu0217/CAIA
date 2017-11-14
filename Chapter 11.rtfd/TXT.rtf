@@ -1,0 +1,181 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17560\viewh6200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Chapter 11 Commodity Forward Pricing\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf0 11.1 Demonstrate knowledge of forward and futures contracts.\
+\uc0\u61623  Describe the trading differences between forward and futures contracts\
+1. forward contracts are typically OTC while futures are exchange traded\
+2. forwards are ad hoc contracts negotiated between two parties, with flexibility regarding the details to help meet the needs and preferences of each party. Futures contracts are standardized. \
+3. The standardization of futures contracts permits active trading and liquidity \
+\
+\uc0\u61623  Describe and apply the marking-to-market process for futures positions\
+A critical distinction between futures and forward contracts is that futures are marked to market, which means the side of a futures contract the benefits from a price change received cash from the otters side of the contract throughout the contract life. \
+\
+\uc0\u61623  Discuss the effect of marking-to-market on counterparty risk\
+
+\b Crisis at maturity:
+\b0  when party owing a payment is forced at the last moment to reveal that it cannot afford to make the payment.\
+Daily marking of a position to market typically limits counterparty risk to one day\'92s price movement. As an OTC traded product, forward contracts are not usually marked-to-market and are therefore subject to greater counterpart risk. \
+\
+\uc0\u61623  Recognize the effect of marking-to-market and the time value of money on risk and prices\
+A critical difference between forwards and futures is that MtM of futures accelerates the receipt of profits and losses relative to forward contracts. \
+1. acceleration of cash flows: higher price volatility and higher risk.\
+2. increase the present value by paying now. So futures have higher price risk than otherwise identical forward contracts.\
+At inception, no difference between the price of a futures contract and an otherwise identical forward contact if interest rate changes are uncorrelated with the spot price underlying the contract. However, with positive correlation between spot prices and interest rates, the long side of futures contract tends to receive MtM cash flows when interest rates move higher and tends to deliver MtM cash flows when interest rates move lower. This asymmetric relationship, which tends to benefit the long side, forces the price of the futures contract above the price of an otherwise equivalent forward contract. \
+i.e. forward value vs futures value <= depends on correlation between spot price and interest rates\
+\
+\uc0\u61623  Define and calculate initial margin for futures positions\
+
+\b Initial margin
+\b0 : the collateral deposit made at the initiation of a long or short futures position. Margin is set by exchange and subject to change (usually <10%). \
+\
+\uc0\u61623  Define and calculate maintenance margin for futures positions\
+
+\b Maintenance margin
+\b0  requirement is a minimum collateral requirement imposed on an ongoing basis until a position is closed. It is usually set to be 75% to 80% of IM. If the collateral of a market participant falls below the maintenance margin requirement due to MtM losses, a margin call is issued. \
+A 
+\b margin call
+\b0  is a demand for posting of additional collateral to meet the initial margin requirement. If investor cannot meet margin call, the futures commission merchant has the right to liquidate the investor\'92s positions in account. This daily process ensures to reduce counterparty risk.\
+\
+\
+11.2 Demonstrate knowledge of the rolling futures positions.\
+\uc0\u61623  Explain the process of maintaining long-term futures exposures through short-term futures positions\
+As futures and forwards expire at settlement, it is necessary to roll the positions over at or prior to their settlement dates to maintain a long-term exposure. 
+\b Rolling
+\b0  
+\b contracts
+\b0  refers to the process of closing positions in short-term futures contracts and simultaneously replacing the exposure by establishing similar positions with longer terms. \
+
+\b Front month contract 
+\b0 (front contract, nearby contract, or spot contract): futures contact with shortest time to settlement\
+
+\b Distant contract
+\b0  (deferred contract, or back contract): contract with longer times t settlement\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2017-11-13 at 11.47.52 AM.jpg \width11840 \height8100
+}¬}
+\fs22 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\uc0\u61623  Discuss the effects of rollover decisions on the returns of long-term futures exposures\
+The timing of each rollover transaction is at the discretion of the investor. The critical point is: long-term returns on futures contracts vary based on the particular decisions made by the holder of the position regarding the procedures used to extend the position into a longer position. Traders with different preferences for rolling contracts experiences different long-term returns.\
+\
+\
+11.3 Demonstrate knowledge of the term structure of forward prices on commodities.\
+\uc0\u61623  Recognize the cost-of-carry model for commodity futures contracts\
+Cost of acquiring and carrying a long position in underlying physical commodity:\
+spot commodity price + carrying costs = forward price\
+                    Real Assets                       Financial Assets\
+Benefits       Convenience (y)                Dividends and coupons (d)\
+Costs           Interest (r) + storage (c)    Interest (r) + custody (zero)\
+Cost of carry: the benefits of carry, and assigned a negative value.\
+
+\b Storage
+\b0  
+\b cost
+\b0 : expenditures such as warehouse fees, insurance, transportation, and spoilage.\
+
+\b Convenience
+\b0  
+\b yield
+\b0  is the economic benefit that the holder of an inventory in the commodity receives from directly holding the inventory rather than having a long position in a forward contract on the commodity. \
+\
+\uc0\u61623  Recognize and calculate arbitrage-free forward pricing for physical assets\
+F(T) = S*exp((r+c-y)*T)\
+\
+\uc0\u61623  Recognize limitations to arbitrage-free forward pricing for physical assets\
+1. Short position in underlying physical asset may be very difficult for expensive to obtain\
+2. Convenience yields and storage costs of market participants may differ and are unobservable\
+For potential inability to take a cost-effective short position in physical asset\
+F(T) <= S*exp((r+c-y)*T)\
+Reason for inequality: long positions in the spot price can be used to perform arbitrage when he forward price is too hight, but short positions in the spot price may not be available to perform arbitrage when forward price is too low.\
+\
+\uc0\u61623  Discuss the effect of harvests, supply elasticity, and shifts in supply and demand on the term structure of forward prices\
+A key issue in understanding the term structure of forward prices is the rate at which and extent to which the supply and demand of a commodity can change.\
+
+\b Inelastic supply
+\b0 : supplies change slowly in response to market prices\
+
+\b Perfectly elastic supply
+\b0 : any quantity demanded of a commodity can be instantaneously and limitlessly supplied without changes in the market price (e.g. currency).\
+\
+\
+11.4 Demonstrate knowledge of the concepts of backwardation, normal backwardation, contango, and normal contango.\
+\uc0\u61623  Define and compare backwardated markets and markets in contango\
+1. Backwardation: forward price < current spot price\
+2. Contango: forward price > current spot price\
+\
+\uc0\u61623  Discuss backwardation and contango in informationally efficient markets\
+In informationally efficient market, contango and backwardation occur to prevent arbitrage opportunities.\
+In efficient market, all contracts offer equal risk-adjusted expected returns, regardless of the slope and shape of term structure of forward prices.\
+\
+\uc0\u61623  Define and compare normal backwardation and normal contango\
+1. normal backwardation: the forward price is believed to be below the expected spot price. It does not mean the markets are inefficient. \
+2. similar for normal contango\
+Unlike backwardation and contango, normal backwardation and normal contango cannot be directly observed, because expected spot prices cannot be observed. \
+\
+\uc0\u61623  Discuss normal backwardation and normal contango in informationally efficient and inefficient markets\
+The only time that forward = spot price in an informationally efficient market is when underlying asset contains no systematic risk.\
+\
+\
+11.5 Demonstrate knowledge of the characteristics of returns on futures and forward contracts.\
+\uc0\u61623  Discuss futures and forward contracts as alpha and beta drivers\
+
+\b Alpha
+\b0  
+\b driver
+\b0 : a market participant who uses futures contracts or forward contracts might be viewing the forward contracts on a commodity as misplaced relative to the underlying spot price or to other vehicles for obtaining commodity exposure.\
+
+\b Beta
+\b0  
+\b driver
+\b0 : try to obtain the risk and returns of the underlying commodity in most cost-effective manner possible. e.g. portfolio manager wish to diversify into Japanese equities may establish a poisition in a forward contact on Nikkei 225.\
+\
+\uc0\u61623  Define the law of one price\
+The 
+\b law of one price
+\b0  states that in the absence of trading restrictions, two identical assets will not persist in trading at different prices in different markets because arbitrageurs will buy the relatively underpriced asset and set the relatively overpriced asset until the discrepancy disappears.\
+\
+\uc0\u61623  Describe the relationship between ex ante alpha and the shape of the term structure of forward prices\
+Alpha-driven strategy example: use futures or forward based on shape of term structure of forward prices.\
+Ex ante alpha exists when the term structure of forward prices takes on a shape that is informationally inefficient. \
+An 
+\b informationally inefficient term structure
+\b0 : has pricing relationships that do not properly reflect available information\
+Ex ante alpha generation requires knowledge of when the shape of term structure is informationally inefficient and therefore out of equilibrium and able to arbitraged. The primary method of generating alpha is understanding equilibrium pricing and anticipating the forces that ultimately guide prices toward their informationally efficient levels. \
+\
+\uc0\u61623  Discuss informationally inefficient term structures of forward curves\
+\
+\
+\uc0\u61623  Define and determine the basis of forward contracts\
+The 
+\b basis
+\b0  in forward contract is the difference between spot (or cash) price of the referenced asset, S and the price (F) of a forward contract with delivery T\
+Basis = S - F(T)\
+In informationally efficient market, basis = cost of carry\
+\
+\uc0\u61623  Describe calendar spreads, and discuss their risks and returns\
+Calendar spread = F(T+t) - F(T)\
+A 
+\b calendar spread
+\b0  can be viewed as the difference between futures or forward prices on the same underlying asset but with different settlement dates. Therefore, it is a speculation on changes in the shape and slope of term structure of forward prices.\
+\
+\uc0\u61623  Calculate returns to calendar spread positions\
+The return depends on spot price (S), riskless rate (r), storage cost (c) and convenience yield (y)\
+1. If r + c - y = 0, the return on calendar spread did not depend on level of spot price. for example, the spot price increase $1, there is no P/L, as both forward prices equal to spot price. the trader is hedged against spot prices.\
+2. If r + c - y > 0, the forward prices will rise relative to spot prices. The longer delivery date of long position will cause the forward price to rise in price more than the shorter forward, netting the trader a profit.\
+Return on calendar spreads are primarily driven by 2 equivalent concepts\
+1. changes in the slope of the term structure of forward prices\
+2. changes in carrying costs\
+\
+\
+\
+}

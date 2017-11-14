@@ -1,0 +1,208 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17100\viewh8640\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Chapter 9: Regression, Multi-variate, and Nonlinear Methods
+\b0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf0 9.1 Demonstrate knowledge of single-factor regression models.\
+\uc0\u61623  Explain the use of ordinary least squares to estimate regression parameters\
+The ordinary least squares regression selected the intercept and slope that minimize the sum of the squared values of the residuals. It can generate unbiased estimates if the error terms are normally distributed; uncorrelated; and homoskedastic.\
+\
+\uc0\u61623  Describe the problem outliers pose to regression analysis\
+Violations of error normality assumption often occur when the data are subject to very large outliers\
+
+\b Problem
+\b0  1: fat tails.large outliers dominate a regression, potentially causing the estimates of the slope and intercept to be driven too much by the outliers,  rather than by the remaining, more representative data. \
+
+\b Response
+\b0  1: visual observation of the residuals of the regression. Residuals plotted against independent or explanatory variable. If the extreme residuals are not the result of errors, then determine: if the outlier is caused by an event not reasonably expected to not recur, perhaps the outlier should be removed. \
+\
+\uc0\u61623  Describe the problem autocorrelation poses to regression analysis\
+
+\b Problem
+\b0  2: auto-correlation. violation of uncorrelated error assumption often occur when returns are autocorrelated. Many alternative investment return series are specially prone to auto-correlation due to smoothed pricing or illiquidity.\
+
+\b Response
+\b0  2: Durbin-Watson statistic is used to test for auto-correlation of residuals. If yes by test, there are several well-established statistical procedures for performing adjusted regressions that provide better results.\
+Note: first order autocorrelation is a common phenomenon in alternative investments and is reasonably easy to address.\
+E.g. residual autocorrelation may indicate the X were reflecting values changes on a delayed basis. \
+\
+\uc0\u61623  Describe the problem heteroskedasticity poses to regression analysis\
+
+\b Problem
+\b0  3: Heteroskedasticity, where the variance of error term may be correlated with an independent variable, may vary through time, or may be related to some other variable or dimension. \
+
+\b Response
+\b0  3: Residuals should be plotted against the independent variable and against time \
+\
+\uc0\u61623  Interpret a regression\'92s goodness of fit\
+
+\b Goodness of fit
+\b0  of a regression is the extent to which the model appears to explain the variation in the dependent variable. r-squared is simply the squared value of the estimated correlation coefficient between the dependent variable and the independent variable\
+\
+\uc0\u61623  Evaluate the statistical significance of regression parameter estimates\
+\pard\pardeftab720\partightenfactor0
+\cf0 R-squared = 90% means the independent variable explained 90% of the variation in the dependent variable. I.e. 90% of fund\'92s returns were explained by the systematic risk. The remaining 1-r^2 is the idiosyncratic risk, or the risk no explained by the market index\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\uc0\u61623  Calculate the t-statistic\
+The 2nd major interpretation of a regression\'92s results is testing the significance of the parameter estimates. t-test is leveraged to reject or fail to reject a hypothesis by comparing t-statistic to a critical value\
+\
+\
+9.2 Demonstrate knowledge of multi-factor regression models.\
+\uc0\u61623  Describe the ex post version of the Fama-French model\
+R-it - R_f = a_i + b_mi (R_mt-R_f) + b_1i (R_st - R_bt) + b_2i (R_ht - R_lt) + e_it\
+A typical result of adding more true factors to a model is that r-squared increases and alpha estimate declines. The estimated alpha typically declines, as returns that were previously attributed to the intercept (alpha) are now explained by systematic risk exposures to the anomaly factors of size and value (beta). The key challenge is deciding which independent variables (factors) to include\
+\
+\uc0\u61623  Describe the problem that multicollinearity poses to multi-factor regression analysis\
+
+\b Multi-collinearity
+\b0  is when two or more independent variables in a regression model have high correlation to each other. When two independent variables are highly correlated, there are two primary adverse effects to regression results:\
+1. The estimates of the slop coefficients for each of the correlated independent variables may be highly inaccurate\
+2. The standard errors for the correlated independent variables may be inflated (large)\
+With multicollinearity, even though the r-squared of a regression may be high, it can be difficult to find independent variables with coefficients that have significant t-statistics.\
+Corrections of multi-collinearity: to form return spreads between the correlated independent variables. The estimated slope coefficients for each of the highly correlated factors would be unreliable and are likely to be statistically insignificant. one way to use variable A as one variable and use B-A as another variable. This transformation serves to reduce the correlation between the independent variables, now making it possible to better separate the effects of each market segment independently.\
+\
+\uc0\u61623  Discuss the selection process of independent variables for multi-factor regression analysis and the potential shortcomings to the stepwise regression technique\
+A stepwise regression technique is used. It is an iterative technique in which variables are added or deleted from the regression equation based on their statistical significance. At each step, the variables with the greatest t-statistics are added or retained in the model, and variables with insignificant t-statistics are deleted from the model.\
+\
+\
+9.3 Demonstrate knowledge of dynamic risk exposure models\
+\uc0\u61623  Define nonlinear exposure\
+A nonlinear exposure of a position to a market factor is when the sensitivity of position\'92s value varies based on magnitude of the level of change win the market factor\'92s value. (i.e. 1st derivative not constant)\
+\
+\uc0\u61623  Discuss and apply the dummy variable approach to analyzing market-timing strategies\
+The effectiveness of market-timing strategies can be analyzed by a comparison of their average risk exposures to up markets and their average risk exposures to down markets. \
+R_it - R_f = a_i + \{[b_id + (D-1 \\times b_\{i,diff\})] \\times (R_mt - R_f)\} + e_it\
+The dummy variable D_1 is set to equal to 1 when excess returns on the market index; R_mt - R_f are positive and set to zero when the excess returns are zero or negative; The 
+\b down market beta
+\b0 , b_id, is the responsiveness of the fund\'92s return to the market return when the market return is less than the riskless rate (i.e. excess return is negative). The up market beta b_\{i,u\} is the responsiveness of the fund\'92s return to the market return when the excess market return is positive. \
+\
+\uc0\u61623  Discuss the 
+\b separate
+\b0  
+\b regression
+\b0  approach to analyzing market-timing strategies\
+A similar approach to dummy variable is to perform separate regressions based on sub-samples. The analyst simply breaks the data set into multiple sub-samples based on a specified conditions (e.g. rising and down markets)\
+\
+\uc0\u61623  Discuss and apply the 
+\b quadratic
+\b0  
+\b approach
+\b0  to analyzing market-timing strategies\
+R_it - R_f  = a_i + b_im (R_mt - R_f)^2 + e_it\
+U-shaped profit-loss diagram. A statistically significant and positive b_im on the squared term is an indication that the manager has been able to successfully time the market, earning positive returns in both strong risking and strongly falling market. A significant negative value of b_im indicates that the manager has perverse market-timing skills.\
+\
+\
+9.4 Demonstrate knowledge of methods for modeling changing correlation\
+Two methods to model changing correlations\
+1. conditional correlation\
+2. rolling window modeling approach\
+\
+\uc0\u61623  Recognize and describe the concept of conditional correlation\
+A conditional correlation is a correlation between two variables under specified circumstances. Positive conditional correlation of investment returns is when the correlation in the up sample is higher than the correlation in the down sample. \
+\
+\uc0\u61623  Describe the rolling window approach to modeling changing correlation\
+
+\b Rolling window analysis
+\b0  is a relatively advanced technique for analyzing statistical behavior over time, using overlapping subsamples that move evenly through time. A rolling window analysis chooses a time width for the window, e.g. 36 months, and performs regression or correlation analysis for each contiguous 36 month period in the data. The sub-periods use overlapping data as the window moves from the first 36 months of data to the last 36 months of data. For example, 10 years of data, a rolling window of 36 months would produce 85 unique outputs: 1 to 36, \'85, 85 to 120\
+
+\b Example
+\b0 : 50-week rolling window analysis for four years of data (208 weeks). there would be 158 windows of analysis, but there would be only four independent analysis, such as 1-5-, 51-100, 101-150, and 151-200.\
+\
+9.5 Demonstrate knowledge of approaches to analyzing hedge fund returns using multi-factor models\
+\uc0\u61623  Describe how style analysis and asset class groupings can be used to analyze fund performance\
+
+\b Style analysis
+\b0  is the process of understanding an investment strategy, especially statistical approach, based on grouping fundings by their investment strategies or styles. 
+\b Typical
+\b0  
+\b question
+\b0 : funds of same investment style have returns be explained by the same underlying return factors?\
+Sharpe\'92s style analysis\
+1. groups mutual funds by their stated investment styles\
+2. analyze the performance of each group relative to the performance of various potentially underlying asset classes\
+Shape regresses mutual fund returns on the returns of various asset classes. His results indicate that up to 90% of each mutual  fund\'92s returns are explained by returns of a few underlying asset classes. The balance (remaining) of returns may be attributable to manager skill, including security selection and market timing, or luck.\
+In summary, traditional mutual fund returns are well explained by the returns of asset classes that the funds hold, but the same is not true for hedge funds. \
+\
+\uc0\u61623  Describe how performance of a fund can be analyzed using returns of funds with similar strategies\
+
+\b Principal components analysis
+\b0  (PCA) is a statistical technique that groups the observations in a large data set into smaller sets of similar types baed on commonalities in the data. Thus, PCA identifies subgroups of observations that tend to behave similarly. FH group return of hedge funds into 5 categories\
+1. Systems/opportunistic\
+2. Global macro\
+3. Value\
+4. Systems/trend following\
+5. Distressed\
+These 5 fund styles explain about 45% of cross sections variation in hedge fund returns. Their work suggests that cross sectional hedge fund returns are better explained by their trading styles than by their correlations with traditional asset classes. E.g. return of a global macro fund tend to be explained better by fund\'92s tendency to behave like other global macro funds than by its mixture of underlying traditional asset classes.\
+\
+\uc0\u61623  Describe how market-wide factors can be used to analyze performance of a fund\
+FF indicates that individual equity returns can be explained by identifiable marketwise factors, e.g. size. The key is arbitrage-free model of returns. Researcher develop relevant factors by\
+1. Developing a concept of how the returns experienced by underlying securities in the market might vary based on a particular variable\
+2. Dividing the sample into two subgroups based on that variable\
+3. Estimating the reign spread from being long one of the group and short the other group\
+4. Empirically examining whether returns from the entire sample of securities are consistently explained by the return spread\
+There are 3 distinguishing characteristics to multi-factor analysis using marketwise return factor\
+1. Using 
+\b tradable
+\b0  
+\b factors
+\b0  that are identified as the spread between the return of two groups of stocks (e.g. return of small-cap stocks minus the return of large-cap stocks\
+2. Using 
+\b empirically
+\b0  
+\b identified
+\b0  factors rather than factors identified with theory\
+3. For each asset, finding 
+\b empirically
+\b0  
+\b estimated
+\b0  
+\b exposures
+\b0  to the factors rather than risk exposures identified through fundamental analysis of the asset of fund\
+When factors are tradable, there are 2 important economic implications\
+1. The intercept of the model in an efficient market must be equal to the riskless rate\
+2. The model itself can be described as an arbitrage-free relationship \
+FH propose 7 observable and tradable factors\
+1. The return of S&P 500 - risk-free return\
+2. Small-cap stock return - large-cap stock return\
+3. The return of 10-year Treasury bond - risk-free return\
+4. The return of Baa-rated bonds - return of 10-year Treasury bond\
+5. The return of portfolio of call and put options on bonds\
+6. The return of portfolio of call and put options on currencies\
+7. The return of portfolio of call and put options on commodities\
+Note: 5, 6, and 7 are constructed to mimic the behavior of look-back options, which has a payoff based the value of underlying asset over a reference period rather than simply the value of underlying asset at option\'92s expiration date. FH claims that 90% of return can be explained by those 7 factors. Note: not so good for hedge funds\
+\
+\uc0\u61623  Describe how specialized market factors can be used in hedge fund replication\
+hedge fund replication is the process of mimicking the performance of a particular hedge fund investment strategy using different assets or a different investment process. Two replication approaches\
+1. Use liquid products to replicate illiquid securities\
+2. To replicate returns of skill-based proprietary strategy using a naive and mechanical trading model applied o positions similar to the positions being held by the fund being replicated.\
+In the context of multi-factor return models, hedge fund replication involves identifying specialized market factors, and estimating the fund exposures to those factors.The difference btw this approach and market-wide factor approach: the factors are selected to be tailored to the specifics of a particular fund rather than watered as market-wide factors. Note: the factors in a market-wide approach are selected on how they explain returns of all assets in a market.\
+\
+9.6 Demonstrate knowledge of estimating hedge fund performance persistence\
+\uc0\u61623  Discuss approaches to estimating hedge fund performance persistence\
+1. To examine the correlation between samples of earlier returns and subsequent returns\
+2. Empirical analysis of return persistence vary by time periods analyzed, time intervals used, and investments examined\
+
+\b Problem 1
+\b0 : results could be driven by serial correlation of returns, not reflecting performance correlations. \
+
+\b Problem 2
+\b0 : asset returns are not risk-adjusted. as high-risk assets should consistently generate higher returns than low-risk assets, return persistence in a sample may simply reflect heterogeneous risks.\
+Solution: To focus on risk-adjusted measures of skill and estimate whether a measure of skill in one period is correlated to the same measure of skill in a subsequent period. The issue is: results are sensitive to the model used to adjust for risk. \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
